@@ -23,6 +23,10 @@ def index():
 def analytics():
     return render_template('analytics.html')
 
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+    return render_template('data.html')
+
 @app.route('/get/headers/<query>', methods=['GET', 'POST'])
 def getHeaders(query):
     return jsonify({'headers': datasetHeaders})

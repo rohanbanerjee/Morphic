@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Amplify Framework</title>
+        <title>Morphic</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             html, body { font-family: "Amazon Ember", "Helvetica", "sans-serif"; margin: 0; }
-            a { color: #FF9900; }
+            a { color: #FBFBFB; }
             h1 { font-weight: 300; }
             .app { width: 100%; }
-            .app-header { color: white; text-align: center; background: linear-gradient(30deg, #f90 55%, #FFC300); width: 100%; margin: 0 0 1em 0; padding: 3em 0 3em 0; box-shadow: 1px 2px 4px rgba(0, 0, 0, .3); }
+            .app-header { color: white; text-align: center; background: linear-gradient(30deg, #FBFBFB 55%, #FBFBFB); width: 100%; margin: 0 0 1em 0; padding: 3em 0 3em 0; box-shadow: 1px 2px 4px rgba(0, 0, 0, .3); }
             .app-logo { width: 126px; margin: 0 auto; }
             .app-body { width: 400px; margin: 0 auto; text-align: center; }
-            .app-body button { background-color: #FF9900; font-size: 14px; color: white; text-transform: uppercase; padding: 1em; border: none; }
+            .app-body button { background-color: #FBFBFB; font-size: 14px; color: white; text-transform: uppercase; padding: 1em; border: none; }
             .app-body button:hover { opacity: 0.8; }
         </style>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,43 +23,20 @@
         <div class="app">
             <div class="app-header">
                 <div class="app-logo">
-                    <img src="https://aws-amplify.github.io/images/Logos/Amplify-Logo-White.svg" alt="Morphic.ai" />
+                    <img style="width: 200px; height: 200px" src="https://camo.githubusercontent.com/24b4be5b55b11af9096cbb42e74a09a25cba0287/68747470733a2f2f692e696d6775722e636f6d2f3854364b6c48632e6a7067" alt="Morphic.ai" />
                 </div>
-                <h1>Morphic.ai</h1>
+                <h1>Morphic</h1>
             </div>
             <div class="app-body">
                 <button id="queryButton" onclick="getHeaders()">Query</button>
                 <div id="queryResults"></div>
             </div>
 
-            <div class="container">
 
-                    <div id="toolbar">
-                        <select class="form-control">
-                                <option value="all">Export All</option>
-                                <option value="selected">Export Selected</option>
-                        </select>
-                    </div>
-        
-                <table  id="tablex" class=" table orderx-list" border="1" align="center"
-                data-toggle="table"
-                data-search="true"
-                data-show-columns="true"
-                data-filter-control="true" 
-                data-show-export="true"
-                data-pagination="true" 
-                data-height="500"
-                data-click-to-select="true"
-                data-toolbar="#toolbar"
-                   class="table-responsive">
-                   <thead>
-                </thead>
-                <tbody>
-            </tbody>
-                </table>
-        
-                </div>
-        
+            <center>
+            <button type="button" class="btn btn-warning btn-large"><a href="http://localhost:5000">Get Started</a></button>
+            </center>
+
             
         </div>
         <script src="main.bundle.js"></script>

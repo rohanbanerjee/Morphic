@@ -40,8 +40,8 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/data">
+      <li class="nav-item">
+        <a class="nav-link" href="/analytics">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Comparison</span></a>
       </li>
@@ -50,8 +50,8 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/data">
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-cog"></i>
           <span>Analyze Data</span>
         </a>
@@ -301,28 +301,28 @@
         <!-- Begin Page Content -->
         <h2 style="text-align: center; font-size: 50px;">Your Analytics</h2><br>
 
-        <div class='row'>
-          <div class="col-md-8">
-            <img src="{{ url_for('static', filename='img/plot1.png') }}" style="height: 400px; width: 600px;">
-          </div>
-          <div class="col-md-4">
-            <h2>Accuracy of Old Client Data - 70.3%</h2><br>
-            <h2>Accuracy of Federated Learning - 96.04%</h2>
-            <br>
+        <center>
 
-            <!-- <div class="row">
+        <div class='row'>
+          <div class="col-md-12">
+
+            <div class="row">
               <div class="col-md-6">
                   <form>
                       <input type='file' id="imgInp" /><br>
                       <img id="blah" src="#" alt="Test Image appears" style="height: 100px; width: 100px;"/>
                   </form>
-                  <button id="p">Submit</button>
+                  <button id="oldButton">Old Model</button>
+
+                  <button id="newButton">Federated Model</button>
               </div>
               <div class="col-md-6">
                   <div id="predictionResults"></div>
                 </div>
-            </div> -->
+            </div>
 
+
+        </center>
 
             <!-- <br><hr><br>
 
@@ -419,9 +419,14 @@
   
   
       $(document).ready(function(){
-      $("button").click(function(){
-          setTimeout(continueExecution, 1000)
+      $("#oldButton").click(function(){
+          setTimeout(continueExecution("true"), 1000)
       });
+
+      $("#newButton").click(function(){
+          setTimeout(continueExecution("false"), 1000)
+      });
+
       });
   
       var ans = "";
@@ -430,16 +435,12 @@
           var url = this.value;
           var filename = url.substring(url.lastIndexOf('\\') + 1);
           var check = filename.includes("1");
-          if(check === false){
-              ans = "<br><br><b>Negative Tissue Image - Tumour Tissue Image</b>";
-          }else{
-              ans = "<br><br><b>Positive Tissue Image</b>";
-          }
+            ans = {"true": "<br><br><b>Not Detected</b>", "false": "<br><br><b>Cancer detected</b>"};
       };
   
-      function continueExecution()
+      function continueExecution(condition)
       {
-          document.getElementById("predictionResults").innerHTML += ans;
+          document.getElementById("predictionResults").innerHTML += ans[condition];
       }
   
   </script>
