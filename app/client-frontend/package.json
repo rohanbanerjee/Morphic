@@ -4,9 +4,9 @@
   "description": "Morph Amplify",
   "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
-    "copy-webpack-plugin": "^4.5.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "copy-webpack-plugin": "^11.0.0",
     "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
